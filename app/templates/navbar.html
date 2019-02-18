@@ -1,29 +1,30 @@
 <div class="navbar navbar-inverse" role="navigation" style="background-color: black;">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/" style="color: white;"> Blog </a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="/"style="color: white;">HOME</a></li></ul>
-                <ul>
-                    <li><a href="/category"> </a></li>
-                </ul>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            {% if current_user.is_authenticated %}
-            <li style="color:white;padding:15px;">{{current_user.username}}</li>
-            <li><a href="{{url_for('auth.logout')}}"style="color: white;">ADMIN Sign out</a></li>
-            {% else %}
-            <li><a href="{{url_for('auth.login')}}"style="color: white;">ADMIN Sign in</a></li>
-            {%endif%}
-          </ul>
-
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/" style="color: white;"> Blog </a>
     </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/" style="color: white;">HOME</a></li>
+      </ul>
+      <ul>
+        <li><a href="/category"> </a></li>
+      </ul>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      {% if current_user.is_authenticated %}
+      <li style="color:white;padding:15px;">{{current_user.username}}</li>
+      <li><a href="{{url_for('auth.logout')}}" style="color: white;">ADMIN Sign out</a></li>
+      {% else %}
+      <li><a href="{{url_for('auth.login')}}" style="color: white;">ADMIN Sign in</a></li>
+      {%endif%}
+    </ul>
+
+  </div>
 </div>
