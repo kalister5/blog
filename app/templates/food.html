@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+# imported form flask bootstrap allowing rendering of forms
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% for message in get_flashed_messages() %}
+{{message}}
+{% endfor%}
+<div class="row" style="background-image: url('https://images.unsplash.com/photo-1493219686142-5a8641badc78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="container" style="background-color:  #D3D3D3;">
+<a href="{{url_for('main.food')}}">Blog Post</a>
+{{ wtf.quick_form(blog_form) }}
+</div>
+ </div>
+
+{% endblock%}
