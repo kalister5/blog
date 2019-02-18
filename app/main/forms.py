@@ -20,7 +20,7 @@ class UpdateProfile(FlaskForm):
 
 class SubscriberForm(FlaskForm):
     email = StringField('Your Email Address',validators=[Required(),Email()])
-    title = StringField('Entre Your Name' ,validators=[Required()])
+    title = StringField('Enter Your Name' ,validators=[Required()])
     submit = SubmitField('Subscribe')
 
     def validate_email(self,data_field):
