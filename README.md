@@ -62,4 +62,16 @@ In the same terminal type: python3 manage.py server
 
 Open the browser on http://localhost:5000/
 
+## Behavior Driven Development
+
+|Behavior|input|output|
+|--------|-----|------|
+|Sign up .| Enter email and password . | Sign in successful .|
+| Log in .| Enter email and password .|  Login successful .|
+|  comment  .| Enter comment and click post button .| comment published successful .|
+
+
+## Licence
+
+MIT licence. Copyright (c) 2018 Abdillahi mohamud .
    .
