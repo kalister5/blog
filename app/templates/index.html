@@ -13,8 +13,8 @@
                 </div>
             <a href="{{url_for('main.subscriber')}}">Subscribe</a>
             <div class="container" style="width: 50%; background-color: #D3D3D3;opacity: 0.8;">
-                <p><strong>Enter your Email and Name to Subscribe</strong></p>
-                <p><strong>Get A Notifaction Everytime I Post</strong></p>
+                <p><strong>*Enter your Email and Name to Subscribe</strong></p>
+                <p><strong>*Get A Notifaction Everytime I Post</strong></p>
             {{ wtf.quick_form(subscriber_form) }}
             </div>
             {% for category in food %}
