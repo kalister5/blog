@@ -23,4 +23,43 @@ So far no identified bugs but if you get any contact me on [email](zainkalister@
 ## Contact information
 
 if anyone has question or wants to contribute to the project the please contact me through #0796303066 or at [email](zainkalister@gmail.com) .
+
+# Project setup installation
+
+## Prerequisites
+
+- Python 3.6
+- Ubuntu software
+
+## Create a Virtual Environment
+
+## Install dependancies
+
+Install dependancies that will create an environment for the app to run
+
+pip3 install -r requirements
+
+Install Postgres
+
+## Prepare environment variables
+
+export DATABASE_URL='postgresql+psycopg2://username:password@localhost/pitches'
+
+export SECRET_KEY='Your secret key'
+
+
+## Run Database Migrations
+
+python manage.py db init
+
+python manage.py db migrate -m "initial migration"
+
+python manage.py db upgrade
+
+## Running the app in development
+
+In the same terminal type: python3 manage.py server
+
+Open the browser on http://localhost:5000/
+
    .
