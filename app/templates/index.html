@@ -1,72 +1,79 @@
 {%extends 'base.html'%}
 {% import "bootstrap/wtf.html" as wtf %}
-    {% block content%}
-            <div class="row" style="background-image: url('');width: 100%;">
-                <div class="row" style="background-image: url('https://images.unsplash.com/photo-1493219686142-5a8641badc78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
-                        {% if current_user.is_authenticated %}
-                        <button ><a href="{{url_for('main.food')}}"><strong>.............Post A Blog</strong></a></button>
-                        {% endif %}
-                        <div class="container" style="width:50%;background-color: #D3D3D3;opacity: 0.8;" >
-                <strong><h1 style="color: black;">Welcome To My Blog.</h1></strong>
-                <strong><h1 style="color:black;">Opportunities don’t happen, you create them.</h1></strong>
-                <strong><h1 style="color: black;">KALISTER.</h1></strong>
-                </div>
-            <a href="{{url_for('main.subscriber')}}">Subscribe</a>
-            <div class="container" style="width: 50%; background-color: #D3D3D3;opacity: 0.8;">
-                <p><strong>*Enter your Email and Name to Subscribe</strong></p>
-                <p><strong>*Get A Notifaction Everytime I Post</strong></p>
-            {{ wtf.quick_form(subscriber_form) }}
-            </div>
-            {% for category in food %}
-        </div>
+{% block content%}
+<div class="row" style="background-image: url('');width: 100%;">
+  <div class="row" style="background-image: url('https://images.unsplash.com/photo-1493219686142-5a8641badc78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+    {% if current_user.is_authenticated %}
+    <button><a href="{{url_for('main.food')}}"><strong>.............Post A Blog</strong></a></button>
+    {% endif %}
+    <div class="container" style="width:50%;background-color: #D3D3D3;opacity: 0.8;">
+      <strong>
+        <h1 style="color: black;">Welcome To My Blog.</h1>
+      </strong>
+      <strong>
+        <h1 style="color:black;">Opportunities don’t happen, you create them.</h1>
+      </strong>
+      <strong>
+        <h1 style="color: black;">KALISTER.</h1>
+      </strong>
+    </div>
+    <a href="{{url_for('main.subscriber')}}">Subscribe</a>
+    <div class="container" style="width: 50%; background-color: #D3D3D3;opacity: 0.8;">
+      <p><strong>*Enter your Email and Name to Subscribe</strong></p>
+      <p><strong>*Get A Notifaction Everytime I Post</strong></p>
+      {{ wtf.quick_form(subscriber_form) }}
+    </div>
+    {% for category in food %}
+  </div>
 
-            </div>
+</div>
 
-            <div class="row">
-             <div class="container" style="background-color: #D3D3D3;width:100%;">
-             <div class="col-md-12">
-                     <br>
-             <div class="thumbnail" style = "border: 1px solid #800000; width: 100%;">
-            <p>{{category.title}}</p>
-            <hr style="color:black;display: block;
+<div class="row">
+  <div class="container" style="background-color: #D3D3D3;width:100%;">
+    <div class="col-md-12">
+      <br>
+      <div class="thumbnail" style="border: 1px solid #800000; width: 100%;">
+        <p>{{category.title}}</p>
+        <hr style="color:black;display: block;
             height: 1px;
             border: 0;
             border-top: 1px solid #800000;
             margin: 1em 0;
             padding: 0; ">
-            <p>{{category.category}}</p>
-            <hr style="color:black;
+        <p>{{category.category}}</p>
+        <hr style="color:black;
             height: 1px;
             border: 0;
             border-top: 1px solid #800000;
             margin: 1em 0;
             padding: 0; ">
-            <p>{{category.posted}}</p>
-            <hr style="color:blue; width: 50%;
+        <p>{{category.posted}}</p>
+        <hr style="color:blue; width: 50%;
             height: 1px;
             border: 0;
             border-top: 1px solid #800000;
             margin: 1em 0;
             padding: 0; ">
-            <p><a href="/comments/{{category.id}}"><button style=" color: #800000;
+        <p><a href="/comments/{{category.id}}"><button style=" color: #800000;
                 text-align: center;
                 font-size: 15px;
                 padding: 10px;
                 border-radius: 8px;
                 width: 150px;">Comment</button></a></p>
-            </div>
-            {% if current_user.is_authenticated %}
-            <a href="/delete/{{category.id}}"><button style=" color: #800000;
+      </div>
+      {% if current_user.is_authenticated %}
+      <a href="/delete/{{category.id}}"><button style=" color: #800000;
                 text-align: center;
                 font-size: 15px;
                 padding: 10px;
                 border-radius: 8px;
-                width: 150px;">DELETE BLOG</button></a></p>
-            {% endif %}
-            </div>
-            </div>
+                width: 150px;">DELETE
+          BLOG</button></a></p>
+      {% endif %}
+    </div>
+  </div>
 
-        </div>
-            {% endfor %}
+</div>
+{% endfor %}
 
-    {% endblock %}
+{% endblock %}
