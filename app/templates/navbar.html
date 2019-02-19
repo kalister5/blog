@@ -12,7 +12,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="/" style="color: white;">HOME</a></li>
-        <li><a href="#" style="color: white;">Quotes</a></li>
+        <li><a href="{{url_for('main.quotes')}}" style="color: white;">Quotes</a></li>
       </ul>
       <ul>
         <li><a href="/category"> </a></li>
@@ -22,7 +22,7 @@
       {% if current_user.is_authenticated %}
       <li style="color:white;padding:15px;">{{current_user.username}}</li>
 
-        <li><a href="#" style="color: white;">Quotes</a></li>
+
       <li><a href="{{url_for('auth.logout')}}" style="color: white;">ADMIN Sign out</a></li>
       {% else %}
       <li><a href="{{url_for('auth.login')}}" style="color: white;">ADMIN Sign in</a></li>
